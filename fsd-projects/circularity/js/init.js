@@ -27,9 +27,9 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-        physikz.addRandomVelocity(circle, canvas, 5, 5);
-        view.addChild(circle);
-        circles.push(circle);  
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
+            view.addChild(circle);
+            circles.push(circle);  
         } 
           
         // TODO 3 : Call the drawCircle() function
@@ -73,7 +73,6 @@ var init = function (window) {
             for (var i = 0; i < circles.length; i++) {
                 physikz.updatePosition(circles[i]);
                 game.checkCirclePosition(circles[i]);
-
               }
             
         }
@@ -86,7 +85,7 @@ var init = function (window) {
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
+            if (circle.x > canvas.width) {
                 circle.x = 0;
             }
             
@@ -94,10 +93,10 @@ var init = function (window) {
             if (circle.x < 0) {
                 circle.x = canvas.width;
             }
-            if (circle.y > canvas.height) {
+            else if (circle.y > canvas.height) {
                 circle.y = 0;
             }
-            if (circle.y < 0) {
+            else if (circle.y < 0) {
                 circle.y = canvas.height;
             }
 
